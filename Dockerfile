@@ -12,7 +12,11 @@ RUN apk --no-cache add make git gcc libc-dev curl && make build
 # -----------------------------------------------------------------------------
 # Build the final Docker image
 
+ snyk-fix-de45faf5316e4ffefc185971c7f88d0e
+FROM alpine:3.15
+
 FROM alpine:3
+ master
 ARG KUBECTL_VERSION="v1.21.2"
 
 COPY --from=build /k9s/execs/k9s /bin/k9s
